@@ -1,0 +1,57 @@
+
+
+    <!-- <table class="table">
+        <tr style="position: relative;left: 400px;">
+            <th>Name</th>
+            <th><input type="text"></th>
+        </tr>
+        <tr>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+        </tr>
+    </table> -->
+
+
+    
+<div class="container main-table">
+    <h2>Course Registration </h2>
+    
+    <div class="detail">
+        <span class="span">Faculty : Science </span> Department: Computer Science
+    </div>
+    <hr>
+<table class="table  table-striped info">
+    
+    <thead>
+        <th >Code</th>
+        <th >Title</th>
+        <th >Type</th>
+        <th >Unit</th>
+        <th >Action</th>
+    </thead>
+  
+    <tbody>
+
+<tr *ngFor="let row of rows">
+    <td>{{ row.code }}</td>
+    <td>{{ row.name }}</td>
+    <td>{{ row.type }}</td>
+    <td>{{ row.unit }}</td>
+    <td>
+      <button
+        class="btn btn-success"
+        [disabled]="row.disabled"
+        (click)="onClick(row)"
+      >
+        {{ row.disabled ? 'Remove' : 'Add' }}
+        <i class="bi bi-plus"></i>
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">Total Credits:</td>
+    <td>{{ totalCredits }}</td>
+  </tr>
+  
+</table>
+</div>

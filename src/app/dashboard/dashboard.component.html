@@ -1,0 +1,84 @@
+
+
+
+
+<div class="container">
+<form class="form " action="">
+    <div class="mb-3 row">
+      <label for="">Search Text</label>
+
+      <div class="col-xs-3 col-sm-auto">
+        <input type="text" class="form-control" [formControl]="filter" />
+      </div>
+    </div>
+  </form>
+
+<table class="table table-striped student-record__record-table">
+    <thead class="head">
+      <th>#</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Country</th>
+      <th>Area</th>
+      <th>Population</th>
+    </thead>
+    <tbody>
+      @for (student of students; track student.name; let i = $index) {
+      <tr>
+        <th>{{ i + 1 }}</th>
+        <td>
+          <img
+            src="{{ student.studentimage }}"
+            style="height: 40px; width: 40px"
+            alt="img"
+          />
+
+          <ngb-highlight
+            [result]="student.name"
+            [term]="filter.value"
+          ></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight
+            [result]="student.age"
+            [term]="filter.value"
+          ></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight
+            [result]="student.gender"
+            [term]="filter.value"
+          ></ngb-highlight>
+        </td>
+        <td>
+          <img src="{{ student.flag }}" alt="flag" />
+          <ngb-highlight
+            [result]="student.country"
+            [term]="filter.value"
+          ></ngb-highlight>
+        </td>
+
+        <td>
+          <ngb-highlight
+            [result]="student.area"
+            [term]="filter.value"
+          ></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight
+            [result]="student.population"
+            [term]="filter.value"
+          ></ngb-highlight>
+        </td>
+      </tr>
+
+      } @empty {
+      <tr>
+        <H2>There Are No Records To Display</H2>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+</div> 

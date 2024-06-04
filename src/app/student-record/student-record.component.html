@@ -1,0 +1,10 @@
+<h1 class="container">Student Record</h1>
+
+<ag-grid-angular
+class="ag-theme-alpine"
+(girdReady)="onGridReady($event)"
+[columnDefs]="colDefs"
+[rowData]="apiResponse"
+style="height: 250px; width: 600px; position: relative; left: 300px;"
+>
+</ag-grid-angular>

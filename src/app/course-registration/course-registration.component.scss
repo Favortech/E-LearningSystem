@@ -1,0 +1,42 @@
+.main-table {
+  border: 5px solid rgb(241, 244, 245);
+  position: relative;
+  margin-top: 40px;
+  left: 100px;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.detail{
+font-size: 30px;
+    .span{
+        text-align: start;
+        margin-right: 50%;
+        margin-bottom: 10px;
+    }
+}
+
+button:disabled {
+  background-color:red; /* or any other color you prefer */
+  color: whitesmoke; /* or any other color you prefer */
+  cursor: not-allowed;
+}
+
+
+
+
+.info {
+  thead {
+    margin-bottom: 40px;
+    th {
+      font-size: 30px;
+      font-weight: 400;
+      padding-bottom: 30px;
+    }
+  }
+  td{
+    padding: 20px;
+    font-size: 20px;
+  }
+}
+
